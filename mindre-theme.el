@@ -226,21 +226,8 @@ Takes care of adding or removing hooks when the
   "Face for headings."
   :group nil)
 
-(defun mindre ()
-  "Load mindre theme."
-  (interactive)
-
-  (when mindre-use-faded-lisp-parens
-    (add-hook 'lisp-data-mode-hook #'mindre--font-lock-add-paren)
-    (add-hook 'scheme-mode-hook #'mindre--font-lock-add-paren))
-
-  (load-theme 'mindre t)
-  (run-hooks 'mindre-after-load-hook))
-
-(make-obsolete 'mindre 'load-theme "0.1")
-
 ;; --- Faces ---------------------------------------------------------
-(let ((mindre-heading-1-height (if mindre-use-more-bold 1.0 1.1)))
+(let ((mindre-heading-1-height (if mindre-use-more-bold 1.1 1.0)))
 
   (mindre-with-color-variables
     (custom-theme-set-faces
