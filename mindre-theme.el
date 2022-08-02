@@ -896,6 +896,10 @@ Takes care of adding or removing hooks when the
     `(geiser-font-lock-autodoc-current-arg ((t :inherit mindre-verbatim)))
     `(geiser-font-lock-autodoc-identifier ((t :inherit mindre-keyword)))
 
+    ;; ---powierline--------------------------------------------------
+    '(powerline-active1 ((t (:inherit mode-line))))
+    '(powerline-active2 ((t (:inherit mode-line))))
+
     ;; --- Racket ----------------------------------------------------
     `(racket-keyword-argument-face ((t (:inherit mindre-keyword)))))))
 
