@@ -173,6 +173,16 @@
   "Face used to dim parentheses."
   :group nil)
 
+;; set org-checkbox-done-text face
+(defface org-checkbox-done-text nil
+  "Face for the text part of a checked org-mode checkbox."
+  :group nil)
+
+(font-lock-add-keywords 'org-mode
+                        '(("^[ \t]*\\(?:[-+*]\\|[0-9]+[).]\\)[ \t]+\\(\\(?:\\[@\\(?:start:\\)?[0-9]+\\][ \t]*\\)?\\[\\(?:X\\|\\([0-9]+\\)/\\2\\)\\][^\n]*\n\\)"
+                           1 'org-checkbox-done-text prepend))
+                        'append)
+
 (defun mindre--font-lock-add-paren ()
   "Make Lisp parentheses faded."
   (font-lock-add-keywords nil '(("(\\|)" . 'mindre-paren-face))))
@@ -597,7 +607,7 @@ Takes care of adding or removing hooks when the
     ;; --- Org agenda ---------------------------------------------------
     '(org-agenda-calendar-event ((t (:inherit mindre-default))))
     '(org-agenda-calendar-sexp ((t (:inherit mindre-keyword))))
-    '(org-agenda-clocking ((t (:inherit mindre-faded))))
+    '(org-agenda-clocking ((t (:inherit mindre-verbatim))))
     '(org-agenda-column-dateline ((t (:inherit mindre-faded))))
     '(org-agenda-current-time ((t (:inherit mindre-strong))))
     '(org-agenda-date ((t (:inherit mindre-keyword))))
@@ -614,42 +624,35 @@ Takes care of adding or removing hooks when the
     '(org-agenda-restriction-lock ((t (:inherit mindre-faded))))
     '(org-agenda-structure ((t (:inherit mindre-strong))))
     `(org-dispatcher-highlight ((t (:inherit mindre-keyword :bold t))))
+    '(org-habit-overdue-face ((t (:weight bold :background "#eaa39c"))))
+    '(org-habit-ready-face ((t (:weight bold :background "#98b3f1"))))
+    '(org-habit-alert-future-face ((t (:weight bold :background "#d5c7a8"))))
 
     ;; --- Org ----------------------------------------------------------
     '(org-archived ((t (:inherit mindre-faded))))
-    '(org-block ((t (:inherit (mindre-block fixed-pitch)))))
-
-    `(org-block-begin-line ((t (:inherit (mindre-faded fixed-pitch)
-					 :foreground "#585c60"
-					 :overline ,gray-silver
-					 :background ,gray-light
-					 :height 0.9
-					 :extend t))))
-
-    `(org-block-end-line ((t (:inherit (mindre-faded fixed-pitch)
-				       :background ,gray-light
-				       :height 0.9
-				       :extend t))))
-
-    '(org-checkbox ((t (:inherit (mindre-default fixed-pitch)))))
-    '(org-checkbox-statistics-done ((t (:inherit (mindre-faded fixed-pitch)))))
-    '(org-checkbox-statistics-todo ((t (:inherit (mindre-default fixed-pitch)))))
+    '(org-block ((t (:inherit (mindre-block)))))
+    '(org-block-begin-line ((t (:background nil :foreground nil :inherit nil))))
+    '(org-block-end-line ((t (:background nil :foreground nil :inherit nil))))
+    '(org-checkbox ((t (:inherit (mindre-default)))))
+    '(org-checkbox-done-text ((t (:inherit (mindre-faded)))))
+    '(org-checkbox-statistics-done ((t (:inherit (mindre-faded)))))
+    '(org-checkbox-statistics-todo ((t (:inherit (mindre-default)))))
     '(org-clock-overlay ((t (:inherit mindre-faded))))
-    '(org-code ((t (:inherit (fixed-pitch mindre-block)))))
+    `(org-code ((t (:background ,bg-inactive))))
     '(org-column ((t (:inherit mindre-faded))))
     '(org-column-title ((t (:inherit mindre-faded))))
-    '(org-date ((t (:inherit mindre-faded))))
+    `(org-date ((t (:foreground ,yellow-dark))))
     '(org-date-selected ((t (:inherit mindre-faded))))
     '(org-default ((t (:inherit mindre-faded))))
     '(org-document-info ((t (:inherit mindre-faded))))
     '(org-document-info-keyword ((t (:inherit (mindre-faded fixed-pitch)))))
-    '(org-document-title ((t (:inherit mindre-strong :height 1.8 :weight semibold))))
-    '(org-done ((t (:foreground "#585c60"))))
+    '(org-document-title ((t (:inherit mindre-strong :weight semibold))))
+    '(org-done ((t (:inherit mindre-faded))))
     '(org-drawer ((t (:inherit (mindre-faded fixed-pitch)))))
     '(org-ellipsis ((t (:inherit mindre-faded))))
     '(org-footnote ((t (:inherit mindre-faded))))
     '(org-formula ((t (:inherit mindre-faded))))
-    '(org-headline-done ((t (:foreground "#585c60"))))
+    '(org-headline-done ((t (:inherit mindre-faded))))
     '(org-headline-todo ((t (:inherit mindre-default))))
     '(org-hide ((t (:inherit mindre-subtle-i))))
     '(org-indent ((t (:inherit mindre-subtle-i))))
@@ -663,7 +666,7 @@ Takes care of adding or removing hooks when the
     `(org-level-7 ((t (:inherit mindre-strong))))
     `(org-level-8 ((t (:inherit mindre-strong))))
     `(org-link ((t (:inherit link))))
-    '(org-list-dt ((t (:inherit mindre-faded))))
+    '(org-list-dt ((t (:inherit mindre-keyword))))
     '(org-macro ((t (:inherit mindre-faded))))
     '(org-meta-line ((t (:inherit (mindre-faded fixed-pitch) :height 0.9))))
     '(org-mode-line-clock ((t (:inherit mindre-faded))))
@@ -672,8 +675,8 @@ Takes care of adding or removing hooks when the
     '(org-property-value ((t (:inherit (mindre-faded fixed-pitch)))))
     '(org-quote ((t (:inherit mindre-default))))
     '(org-scheduled ((t (:inherit mindre-faded))))
-    '(org-scheduled-previously ((t (:inherit mindre-faded))))
-    '(org-scheduled-today ((t (:inherit mindre-faded))))
+    '(org-scheduled-previously ((t (:inherit mindre-default))))
+    '(org-scheduled-today ((t (:inherit mindre-default))))
     '(org-sexp-date ((t (:inherit mindre-faded))))
     '(org-special-keyword ((t (:inherit (mindre-faded fixed-pitch)))))
     '(org-table ((t (:inherit (mindre-default fixed-pitch)))))
