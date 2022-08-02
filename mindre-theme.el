@@ -354,8 +354,8 @@ Takes care of adding or removing hooks when the
     '(eshell-prompt ((t (:inherit mindre-default))))
 
     ;; --- ERC ----------------------------------------------------
-    '(erc-prompt-face ((t (:inhert mindre-default))))
-    '(erc-timestamp-face ((t (:inhert mindre-faded))))
+    '(erc-prompt-face ((t (:inherit mindre-default))))
+    '(erc-timestamp-face ((t (:inherit mindre-faded))))
     '(erc-notice-face ((t (:inherit mindre-keyword))))
     '(erc-current-nick-face ((t (:inherit mindre-strong))))
     '(erc-error-face ((t (:inherit mindre-critical-i))))
@@ -495,9 +495,9 @@ Takes care of adding or removing hooks when the
 
     ;; --- Diredfl ------------------------------------------------------
     `(diredfl-dir-heading ((t (:inherit mindre-keyword))))
-    `(diredfl-file-name ((t (:inhert mindre-default))))
-    `(diredfl-write-priv ((t (:inhert mindre-default))))
-    `(diredfl-read-priv ((t (:inhert mindre-default))))
+    `(diredfl-file-name ((t (:inherit mindre-default))))
+    `(diredfl-write-priv ((t (:inherit mindre-default))))
+    `(diredfl-read-priv ((t (:inherit mindre-default))))
     `(diredfl-exec-priv ((t (:inherit mindre-keyword))))
     `(diredfl-no-priv ((t (:inherit mindre-faded))))
     `(diredfl-dir-priv ((t (:inherit (mindre-bold mindre-strong)))))
