@@ -710,7 +710,7 @@ Takes care of adding or removing hooks when the
     '(mu4e-flagged-face ((t (:inherit mindre-strong))))
     '(mu4e-footer-face ((t (:inherit mindre-faded))))
     '(mu4e-forwarded-face ((t (:inherit mindre-default))))
-    '(mu4e-header-face ((t (:inherit mindre-default))))
+    '(mu4e-header-face ((t (:inherit mindre-faded))))
     '(mu4e-header-highlight-face ((t (:inherit highlight))))
     '(mu4e-header-key-face ((t (:inherit mindre-strong))))
     '(mu4e-header-marks-face ((t (:inherit mindre-faded))))
