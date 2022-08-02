@@ -274,11 +274,11 @@ Takes care of adding or removing hooks when the
     `(mindre-warning ((t (:foreground ,orange))))
     `(mindre-note ((t (:foreground ,green-faint))))
     `(mindre-error ((t (:foreground ,red))))
-    `(mindre-critical ((t (:foreground ,bg-main :background ,red))))
+    `(mindre-critical ((t (:foreground ,red))))
     `(mindre-critical-i ((t (:foreground ,red))))
 
     `(mindre-heading-1 ((t (:inherit mindre-strong :height ,mindre-heading-1-height))))
-    `(mindre-block ((t (:background ,bg-active :foreground ,fg-main :extend t))))
+    `(mindre-block ((t (:background ,bg-inactive :foreground ,fg-main :extend t))))
 
     `(mindre-border ((t (:foreground ,gray-light :box (:color ,gray-silver :line-width 1)))))
 
