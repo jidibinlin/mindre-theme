@@ -768,9 +768,9 @@ Takes care of adding or removing hooks when the
     '(elfeed-search-feed-face ((t (:inherit mindre-keyword))))
     '(elfeed-search-filter-face ((t (:inherit mindre-faded))))
     '(elfeed-search-last-update-face ((t (:inherit mindre-keyword))))
-    '(elfeed-search-title-face ((t (:inherit mindre-default))))
-    '(elfeed-search-unread-count-face ((t (:inherit mindre-strong))))
-    '(elfeed-search-unread-title-face ((t (:inherit mindre-strong))))
+    '(elfeed-search-title-face ((t (:inherit mindre-faded))))
+    `(elfeed-search-unread-count-face ((t (:inherit mindre-strong :foreground ,fg-main))))
+    `(elfeed-search-unread-title-face ((t (:inherit mindre-strong :foreground ,fg-main))))
 
     ;; --- Ivy --------------------------------------------------------
     `(ivy-minibuffer-match-face-1 ((t (:inherit mindre-strong))))
