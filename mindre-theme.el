@@ -190,7 +190,7 @@
 (defvar mindre-after-load-hook nil
   "Hook run after theme has loaded.")
 
-(defcustom mindre-use-more-bold nil
+(defcustom mindre-use-more-bold t
   "Use more bold constructs."
   :type 'boolean :group 'mindre)
 
