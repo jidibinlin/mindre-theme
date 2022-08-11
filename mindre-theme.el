@@ -255,7 +255,7 @@ Takes care of adding or removing hooks when the
     `(mindre-type ((t (:foreground ,green))))
     `(mindre-verbatim ((t (:foreground ,yellow-dark))))
 
-    `(mindre-strong ((t ,(when mindre-use-more-bold '(:weight semibold)))))
+    `(mindre-strong ((t ,(when mindre-use-more-bold '(:weight bold)))))
     `(mindre-strong-i ((t (:foreground ,bg-main :background ,fg-main :weight bold))))
 
     `(mindre-warning ((t (:foreground ,orange))))
