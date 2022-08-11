@@ -302,6 +302,9 @@ Takes care of adding or removing hooks when the
     `(preview-face ((t (:inherit mindre-subtle))))
 
     ;; --- General ------------------------------------------------------
+    '(variable-pitch ((t (:family "bookerly" :height 1.1))))
+
+    ;; --- General ------------------------------------------------------
     '(buffer-menu-buffer ((t (:inherit mindre-strong))))
     '(minibuffer-prompt ((t (:inherit mindre-strong))))
     `(isearch ((t (:inherit (mindre-strong highlight)))))
