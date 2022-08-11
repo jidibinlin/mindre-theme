@@ -57,7 +57,7 @@
       (gray . "#CFD8DC")
       (gray-light . "#ECEFF1")
       (gray-silver . "#B0BEC5")
-      (purple . "#980abf")
+      (purple . "#8408a6")
       (green . "#1a6360")
       (green-faint . "#537469")
       (yellow-dark . "#8a573e")
