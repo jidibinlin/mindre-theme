@@ -284,7 +284,7 @@ Takes care of adding or removing hooks when the
     `(header-line ((t (:inherit mindre-bar :box nil))))
 
     ;; --- Structural ---------------------------------------------------
-    '(bold ((t (:inherit mindre-strong :weight semibold))))
+    '(bold ((t (:inherit mindre-strong :weight bold))))
     '(italic ((t (:slant italic))))
     '(italic ((t (:inherit mindre-faded))))
     '(bold-italic ((t (:inherit mindre-strong))))
