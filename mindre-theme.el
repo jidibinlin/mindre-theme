@@ -373,7 +373,7 @@ Takes care of adding or removing hooks when the
     '(line-number-minor-tick ((t (:inherit mindre-faded))))
 
     ;; --- Font lock ----------------------------------------------------
-    '(font-lock-comment-face ((t (:inherit mindre-faded))))
+    '(font-lock-comment-face ((t (:inherit mindre-faded :slant italic))))
     '(font-lock-doc-face ((t (:inherit mindre-faded))))
     `(font-lock-string-face ((t (:inherit mindre-verbatim))))
     '(font-lock-constant-face ((t (:inherit mindre-strong))))
