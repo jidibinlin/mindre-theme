@@ -664,7 +664,7 @@ Takes care of adding or removing hooks when the
     '(org-mode-line-clock-overrun ((t (:inherit mindre-faded))))
     '(org-priority ((t (:inherit mindre-faded))))
     '(org-property-value ((t (:inherit (mindre-faded fixed-pitch)))))
-    '(org-quote ((t (:inherit mindre-default))))
+    '(org-quote ((t (:inherit mindre-faded :slant italic))))
     '(org-scheduled ((t (:inherit mindre-faded))))
     '(org-scheduled-previously ((t (:inherit mindre-default))))
     '(org-scheduled-today ((t (:inherit mindre-default))))
