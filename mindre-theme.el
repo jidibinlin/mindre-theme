@@ -901,6 +901,9 @@ Takes care of adding or removing hooks when the
     '(rime-indicator-dim-face ((t (:inherit mindre-faded))))
     '(rime-indicator-face ((t (:inherit (mindre-keyword mindre-strong)))))
 
+    ;; ---- ibuffer --------------------------------------------------
+    '(all-the-icons-ibuffer-mode-face ((t (:inherit mindre-faded))))
+
     ;; --- Racket ----------------------------------------------------
     `(racket-keyword-argument-face ((t (:inherit mindre-keyword)))))))
 
