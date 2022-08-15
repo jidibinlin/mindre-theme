@@ -860,8 +860,8 @@ Takes care of adding or removing hooks when the
     '(powerline-active1 ((t (:inherit mode-line))))
     '(powerline-active2 ((t (:inherit mode-line))))
 
-    ;; ---- lsp ------------------------------------------------------
-    '(lsp-ui-doc-background ((t (:inherit mindre-subtle))))
+    ;; ---- ledger ------------------------------------------------------
+    '(ledger-font-posting-date-face ((t (:foreground "#8a573e"))))
 
     ;; ---- rime -----------------------------------------------------
     '(rime-indicator-dim-face ((t (:inherit mindre-faded))))
