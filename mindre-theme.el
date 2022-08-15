@@ -672,7 +672,7 @@ Takes care of adding or removing hooks when the
     '(mu4e-contact-face ((t (:inherit mindre-keyword))))
     '(mu4e-context-face ((t (:inherit mindre-faded))))
     '(mu4e-draft-face ((t (:inherit mindre-faded))))
-    '(mu4e-flagged-face ((t (:inherit mindre-note))))
+    '(mu4e-flagged-face ((t (:inherit mindre-note :weight bold))))
     '(mu4e-footer-face ((t (:inherit mindre-faded))))
     '(mu4e-forwarded-face ((t (:inherit mindre-default))))
     '(mu4e-header-face ((t (:inherit mindre-faded))))
