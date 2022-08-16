@@ -480,6 +480,24 @@ Takes care of adding or removing hooks when the
     '(diredfl-read-priv ((t (:inherit mindre-faded))))
     '(diredfl-user ((t (:inherit mindre-faded))))
     '(diredfl-write-priv ((t (:inherit mindre-faded))))
+    '(diredfl-rare-priv ((t (:inherit mindre-faded))))
+
+    `(diredfl-dir-heading ((t (:inherit mindre-keyword))))
+    `(diredfl-file-name ((t (:inhert mindre-default))))
+    `(diredfl-no-priv ((t (:inherit mindre-faded))))
+    `(diredfl-dir-name ((t (:inherit mindre-bold))))
+    `(diredfl-deletion ((t (:inherit (mindre-critical-i mindre-bold)))))
+    `(diredfl-ignored-file-name ((t (:inherit mindre-faded))))
+    `(diredfl-flag-mark ((t (:background ,bg-inactive))))
+    `(diredfl-symlink ((t (:slant italic))))
+    `(diredfl-rare-priv ((t (:inherit mindre-default :slant italic))))
+    `(diredfl-compressed-file-name ((t (:inherit mindre-default))))
+    `(diredfl-compressed-extensions ((t (:inherit mindre-keyword))))
+    `(diredfl-compressed-file-suffix ((t (:inherit mindre-type))))
+    ;; TODO: I don't know what these are..
+    `(diredfl-link-priv ((t (:foreground ,orange))))
+    ;; `(diredfl-other-priv ((t ())))
+    `(diredfl-tagged-autofile-name ((t (:background "#c6dad3"))))
 
     ;; --- Eglot --------------------------------------------------------
     `(eglot-mode-line ((t (:foreground ,fg-main))))
