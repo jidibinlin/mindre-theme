@@ -491,9 +491,9 @@ Takes care of adding or removing hooks when the
     `(diredfl-flag-mark ((t (:background ,bg-inactive))))
     `(diredfl-symlink ((t (:slant italic))))
     `(diredfl-rare-priv ((t (:inherit mindre-default :slant italic))))
-    `(diredfl-compressed-file-name ((t (:inherit mindre-default))))
-    `(diredfl-compressed-extensions ((t (:inherit mindre-keyword))))
-    `(diredfl-compressed-file-suffix ((t (:inherit mindre-type))))
+    `(diredfl-compressed-file-name ((t (:inherit mindre-faded))))
+    `(diredfl-compressed-extensions ((t (:inherit mindre-faded))))
+    `(diredfl-compressed-file-suffix ((t (:inherit mindre-faded))))
     ;; TODO: I don't know what these are..
     `(diredfl-link-priv ((t (:foreground ,orange))))
     ;; `(diredfl-other-priv ((t ())))
