@@ -183,6 +183,27 @@
                            1 'org-checkbox-done-text prepend))
                         'append)
 
+(defface org-extend-done nil
+  "Face for the text part of DONE state."
+  :group nil)
+(font-lock-add-keywords 'org-mode
+                        '(("\\(^\\** DONE .*\\)\n"
+                           1 'org-extend-done prepend))
+                        'append)
+(font-lock-add-keywords 'org-mode
+                        '(("\\(\\[\\)[0-9]\\{1,2\\}\\/[0-9]\\{1,2\\}\\(\\]\\)"
+                           (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) ""))))
+                          ("\\(\\[\\)[0-9]\\{1,2\\}\\/[0-9]\\{1,2\\}\\(\\]\\)"
+                           (2 (prog1 () (compose-region (match-beginning 2) (match-end 2) "")))))
+                        'append)
+
+(font-lock-add-keywords 'org-mode
+                        '(("\\(\\[\\)[0-9]\\{1,3\\}%\\(\\]\\)"
+                           (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) ""))))
+                          ("\\(\\[\\)[0-9]\\{1,3\\}%\\(\\]\\)"
+                           (2 (prog1 () (compose-region (match-beginning 2) (match-end 2) "")))))
+                        'append)
+
 (defun mindre--font-lock-add-paren ()
   "Make Lisp parentheses faded."
   (font-lock-add-keywords nil '(("(\\|)" . 'mindre-paren-face))))
@@ -608,17 +629,19 @@ Takes care of adding or removing hooks when the
     '(org-habit-alert-future-face ((t (:weight bold :background "#d5c7a8"))))
 
     ;; --- Org ----------------------------------------------------------
+    '(org-extend-done ((t (:inherit mindre-faded))) t)
     '(org-archived ((t (:inherit mindre-faded))))
     '(org-block ((t (:inherit (mindre-block)))))
+    '(org-code ((t (:background "#e7e7e7"))))
     '(org-block-begin-line ((t (:slant italic :background nil :foreground nil :inherit nil))))
     '(org-block-end-line ((t (:background nil :foreground nil :inherit nil))))
     '(org-checkbox ((t (:inherit (mindre-default)))))
     '(org-checkbox-undone-test ((t (:inherit (mindre-default)))))
     '(org-checkbox-done-text ((t (:inherit (mindre-faded)))))
-    '(org-checkbox-statistics-done ((t (:inherit (mindre-faded)))))
-    '(org-checkbox-statistics-todo ((t (:inherit (mindre-default)))))
+    '(org-checkbox-statistics-done ((t (:height 0.6 :inherit mindre-faded))))
+    '(org-checkbox-statistics-todo ((t (:height 0.6 :foreground "dim gray" :inherit mindre-default))))
+    '(org-ellipsis ((t (:height 0.7 :inherit mindre-faded))))
     '(org-clock-overlay ((t (:inherit mindre-faded))))
-    `(org-code ((t (:background ,bg-inactive))))
     '(org-column ((t (:inherit mindre-faded))))
     '(org-column-title ((t (:inherit mindre-faded))))
     `(org-date ((t (:foreground ,yellow-dark))))
@@ -629,7 +652,6 @@ Takes care of adding or removing hooks when the
     '(org-document-title ((t (:inherit mindre-strong :weight semibold))))
     '(org-done ((t (:inherit mindre-faded))))
     '(org-drawer ((t (:inherit (mindre-faded fixed-pitch)))))
-    '(org-ellipsis ((t (:inherit mindre-faded))))
     '(org-footnote ((t (:inherit mindre-faded))))
     '(org-formula ((t (:inherit mindre-faded))))
     '(org-headline-done ((t (:inherit mindre-faded))))
@@ -637,10 +659,10 @@ Takes care of adding or removing hooks when the
     '(org-hide ((t (:inherit mindre-subtle-i))))
     '(org-indent ((t (:inherit mindre-subtle-i))))
     `(org-latex-and-related ((t (:inherit (mindre-default) :background ,bg-main))))
-    `(org-level-1 ((t (:height 1.25 :family "bookerly" :inherit mindre-heading-1))))
-    `(org-level-2 ((t (:height 1.2 :family "bookerly" :inherit mindre-heading-1))))
-    `(org-level-3 ((t (:height 1.15 :family "bookerly" :inherit mindre-heading-1))))
-    `(org-level-4 ((t (:height 1.1 :family "bookerly" :inherit mindre-heading-1))))
+    `(org-level-1 ((t (:height 1.15 :family "bookerly" :inherit mindre-heading-1))))
+    `(org-level-2 ((t (:height 1.1 :family "bookerly" :inherit mindre-heading-1))))
+    `(org-level-3 ((t (:height 1.05 :family "bookerly" :inherit mindre-heading-1))))
+    `(org-level-4 ((t (:height 1.0 :family "bookerly" :inherit mindre-heading-1))))
     `(org-level-5 ((t (:family "bookerly" :inherit mindre-heading-1))))
     `(org-level-6 ((t (:family "bookerly" :inherit mindre-strong))))
     `(org-level-7 ((t (:family "bookerly" :inherit mindre-strong))))
