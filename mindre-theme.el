@@ -504,7 +504,7 @@ Takes care of adding or removing hooks when the
     '(diredfl-rare-priv ((t (:inherit mindre-faded))))
 
     `(diredfl-dir-heading ((t (:inherit mindre-keyword))))
-    `(diredfl-file-name ((t (:inhert mindre-default))))
+    `(diredfl-file-name ((t (:inherit mindre-default))))
     `(diredfl-no-priv ((t (:inherit mindre-faded))))
     `(diredfl-dir-name ((t (:inherit mindre-bold))))
     `(diredfl-deletion ((t (:inherit (mindre-critical-i mindre-bold)))))
