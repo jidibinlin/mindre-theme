@@ -187,7 +187,7 @@
   "Face for the text part of DONE state."
   :group nil)
 (font-lock-add-keywords 'org-mode
-                        '(("\\(^\\** DONE .*\\)\n"
+                        '(("\\(^\\** DONE .*$\\)"
                            1 'org-extend-done prepend))
                         'append)
 (font-lock-add-keywords 'org-mode
@@ -323,7 +323,9 @@ Takes care of adding or removing hooks when the
     `(preview-face ((t (:inherit mindre-subtle))))
 
     ;; --- General ------------------------------------------------------
-    '(variable-pitch ((t (:family "bookerly" :height 1.1))))
+    '(fixed-pitch ((t (:family "Cascadia Mono"))))
+    '(variable-pitch ((t (:height 1.0 :family "Bookerly"))))
+    '(variable-pitch-text ((t (:height 1.0 :inherit variable-pitch))))
 
     ;; --- General ------------------------------------------------------
     '(buffer-menu-buffer ((t (:inherit mindre-strong))))
@@ -650,7 +652,7 @@ Takes care of adding or removing hooks when the
     '(org-document-info ((t (:inherit mindre-faded))))
     '(org-document-info-keyword ((t (:inherit (mindre-faded fixed-pitch)))))
     '(org-document-title ((t (:inherit mindre-strong :weight semibold))))
-    '(org-done ((t (:inherit mindre-faded))))
+    '(org-done ((t (:height 0.8 :inherit mindre-faded))))
     '(org-drawer ((t (:inherit (mindre-faded fixed-pitch)))))
     '(org-footnote ((t (:inherit mindre-faded))))
     '(org-formula ((t (:inherit mindre-faded))))
@@ -659,11 +661,11 @@ Takes care of adding or removing hooks when the
     '(org-hide ((t (:inherit mindre-subtle-i))))
     '(org-indent ((t (:inherit mindre-subtle-i))))
     `(org-latex-and-related ((t (:inherit (mindre-default) :background ,bg-main))))
-    `(org-level-1 ((t (:height 1.15 :family "bookerly" :inherit mindre-heading-1))))
-    `(org-level-2 ((t (:height 1.1 :family "bookerly" :inherit mindre-heading-1))))
-    `(org-level-3 ((t (:height 1.05 :family "bookerly" :inherit mindre-heading-1))))
-    `(org-level-4 ((t (:height 1.0 :family "bookerly" :inherit mindre-heading-1))))
-    `(org-level-5 ((t (:family "bookerly" :inherit mindre-heading-1))))
+    `(org-level-1 ((t (:height 1.15 :family "bookerly" :inherit mindre-strong))))
+    `(org-level-2 ((t (:height 1.1  :family "bookerly" :inherit mindre-strong))))
+    `(org-level-3 ((t (:height 1.05  :family "bookerly" :inherit mindre-strong))))
+    `(org-level-4 ((t (:height 1.0  :family "bookerly" :inherit mindre-strong))))
+    `(org-level-5 ((t (:family "bookerly" :inherit mindre-strong))))
     `(org-level-6 ((t (:family "bookerly" :inherit mindre-strong))))
     `(org-level-7 ((t (:family "bookerly" :inherit mindre-strong))))
     `(org-level-8 ((t (:family "bookerly" :inherit mindre-strong))))
@@ -686,11 +688,14 @@ Takes care of adding or removing hooks when the
     '(org-tag-group ((t (:inherit mindre-faded))))
     '(org-target ((t (:inherit mindre-faded))))
     '(org-time-grid ((t (:inherit mindre-faded))))
-    '(org-todo ((t (:inherit (mindre-keyword mindre-strong)))))
+    '(org-todo ((t (:height 0.8 :inherit (mindre-keyword mindre-strong)))))
     '(org-upcoming-deadline ((t (:inherit mindre-default))))
     '(org-verbatim ((t (:inherit (mindre-verbatim)))))
     '(org-verse ((t (:inherit mindre-faded))))
     '(org-warning ((t (:inherit mindre-strong))))
+
+    ;; --- Org superstar ------------------------------------------------
+    '(org-superstar-header-bullet ((t (:height 0.9))))
 
     ;; --- Org modern ---------------------------------------------------
     `(org-modern-date-active ((t (:inherit org-modern-done :background ,bg-inactive))))
