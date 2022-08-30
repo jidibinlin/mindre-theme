@@ -190,12 +190,41 @@
                         '(("\\(^\\** DONE .*$\\)"
                            1 'org-extend-done prepend))
                         'append)
+
+(defface org-logbook nil
+  "Face for the text part of LOGBOOK drawer."
+  :group nil)
+
+;; (font-lock-add-keywords 'org-mode
+;;                         '(("\\(?:^:LOGBOOK:$\\)\n\\(\\(?:.*\n\\)*?\\)\\(?:^:END:$\\)" 1 'org-logbook append))
+;;                         'append)
+
+(defun org-set-logbook-face ()
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward
+            "\\(?:^:LOGBOOK:$\\)\n\\(\\(?:.*\n\\)*?\\)\\(?:^:END:\\)" nil t)
+      (overlay-put (make-overlay
+                    (match-beginning 0) (match-end 0))
+                   'face 'org-logbook))))
+(add-hook 'org-mode-hook #'org-set-logbook-face)
+
 (font-lock-add-keywords 'org-mode
                         '(("\\(\\[\\)[0-9]\\{1,2\\}\\/[0-9]\\{1,2\\}\\(\\]\\)"
                            (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) ""))))
                           ("\\(\\[\\)[0-9]\\{1,2\\}\\/[0-9]\\{1,2\\}\\(\\]\\)"
                            (2 (prog1 () (compose-region (match-beginning 2) (match-end 2) "")))))
                         'append)
+
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\(- \\)\\["
+                           (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) ""))))))
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\([-]\\) "
+                           (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\([+]\\) "
+                           (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) "►"))))))
 
 (font-lock-add-keywords 'org-mode
                         '(("\\(\\[\\)[0-9]\\{1,3\\}%\\(\\]\\)"
