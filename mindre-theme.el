@@ -233,6 +233,46 @@
                            (2 (prog1 () (compose-region (match-beginning 2) (match-end 2) "")))))
                         'append)
 
+;;; fix tag alignment in variable-pitch-mode
+;;; from https://list.orgmode.org/87lfh745ch.fsf@localhost/T/
+(defun yant/org-align-tags (limit &optional force)
+  "Align all the tags in org buffer."
+  (save-match-data
+    (when (eq major-mode 'org-mode)
+	  (while (re-search-forward "^\\*+ \\(.+?\\)\\([ \t]+\\)\\(:\\(?:[^ \n]+:\\)+\\)$" limit t)
+	    (when (and (match-string 2)
+		           (or force
+			           (not (get-text-property (match-beginning 2) 'org-tag-aligned))))
+	      (with-silent-modifications
+            (put-text-property (match-beginning 2) (match-end 2) 'org-tag-aligned t)
+	        (put-text-property (if (>= 2 (- (match-end 2) (match-beginning 2)))
+				                   (match-beginning 2)
+				                 ;; multiple whitespaces may mean that we are in process of typing
+				                 (1+ (match-beginning 2)))
+				               (match-end 2)
+				               'display
+				               `(space . (:align-to (- right
+							                           (,(+ 3 ;; no idea, but otherwise it is sometimes not enough
+							                                (string-display-pixel-width org-ellipsis)
+							                                (string-display-pixel-width (or (match-string 3)
+											                                                ""))))))))))))))
+
+(defun string-display-pixel-width (string &optional mode)
+  "Calculate pixel width of STRING.
+Optional MODE specifies major mode used for display."
+  (with-temp-buffer
+    (with-silent-modifications
+      (setf (buffer-string) string))
+    (when (fboundp mode)
+      (funcall mode)
+      (font-lock-fontify-buffer))
+    (if (get-buffer-window (current-buffer))
+	    (car (window-text-pixel-size nil (line-beginning-position) (point)))
+      (set-window-buffer nil (current-buffer))
+      (car (window-text-pixel-size nil (line-beginning-position) (point))))))
+(font-lock-add-keywords 'org-mode '(yant/org-align-tags) t)
+
+
 (defun mindre--font-lock-add-paren ()
   "Make Lisp parentheses faded."
   (font-lock-add-keywords nil '(("(\\|)" . 'mindre-paren-face))))
