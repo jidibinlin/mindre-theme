@@ -381,7 +381,7 @@ Takes care of adding or removing hooks when the
     '(region ((t (:inherit highlight))))
     '(fringe ((t (:inherit mindre-faded))))
     '(hl-line ((t (:inherit mindre-subtle))))
-    `(link ((t (:foreground ,black :underline (:color ,gray-silver :style line :position 2)))))
+    `(link ((t (:underline (:color ,gray-silver :style line :position 6)))))
 
     ;; --- Semantic -----------------------------------------------------
     '(shadow ((t (:inherit mindre-faded))))
@@ -535,9 +535,9 @@ Takes care of adding or removing hooks when the
     '(info-index-match ((t (:inherit mindre-keyword))))
     '(info-menu-star ((t (:inherit mindre-default))))
     '(Info-quoted ((t (:inherit mindre-keyword))))
-    '(info-title-1 ((t (:inherit mindre-strong))))
-    '(info-title-2 ((t (:inherit mindre-strong))))
-    '(info-title-3 ((t (:inherit mindre-strong))))
+    '(info-title-1 ((t (:height 1.5 :inherit mindre-strong))))
+    '(info-title-2 ((t (:height 1.3 :inherit mindre-strong))))
+    '(info-title-3 ((t (:height 1.2 :inherit mindre-strong))))
     '(info-title-4 ((t (:inherit mindre-strong))))
 
     ;; --- Helpful ------------------------------------------------------
@@ -700,7 +700,8 @@ Takes care of adding or removing hooks when the
     '(org-habit-alert-future-face ((t (:weight bold :background "#d5c7a8"))))
 
     ;; --- Org ----------------------------------------------------------
-    '(org-extend-done ((t (:inherit mindre-faded))) t)
+    '(org-extend-done ((t (:inherit mindre-faded))))
+    '(org-logbook ((t (:inherit fixed-pitch))))
     '(org-archived ((t (:inherit mindre-faded))))
     '(org-block ((t (:inherit (mindre-block)))))
     '(org-code ((t (:background "#e7e7e7"))))
@@ -721,7 +722,7 @@ Takes care of adding or removing hooks when the
     '(org-document-info ((t (:inherit mindre-faded))))
     '(org-document-info-keyword ((t (:inherit (mindre-faded fixed-pitch)))))
     '(org-document-title ((t (:inherit mindre-strong :weight semibold))))
-    '(org-done ((t (:height 0.8 :inherit mindre-faded))))
+    '(org-done ((t (:height 1.0 :inherit mindre-faded))))
     '(org-drawer ((t (:inherit (mindre-faded fixed-pitch)))))
     '(org-footnote ((t (:inherit mindre-faded))))
     '(org-formula ((t (:inherit mindre-faded))))
@@ -757,7 +758,7 @@ Takes care of adding or removing hooks when the
     '(org-tag-group ((t (:inherit mindre-faded))))
     '(org-target ((t (:inherit mindre-faded))))
     '(org-time-grid ((t (:inherit mindre-faded))))
-    '(org-todo ((t (:height 0.8 :inherit (mindre-keyword mindre-strong)))))
+    '(org-todo ((t (:height 1.0 :inherit (mindre-keyword mindre-strong)))))
     '(org-upcoming-deadline ((t (:inherit mindre-default))))
     '(org-verbatim ((t (:inherit (mindre-verbatim)))))
     '(org-verse ((t (:inherit mindre-faded))))
@@ -842,7 +843,7 @@ Takes care of adding or removing hooks when the
     '(elfeed-log-debug-level-face ((t (:inherit mindre-default))))
     '(elfeed-log-warn-level-face ((t (:inherit mindre-strong))))
     '(elfeed-log-error-level-face ((t (:inherit mindre-strong))))
-    '(elfeed-search-tag-face ((t (:inherit mindre-verbatim))))
+    '(elfeed-search-tag-face ((t (:inherit mindre-faded))))
     '(elfeed-search-date-face ((t (:inherit mindre-default))))
     '(elfeed-search-feed-face ((t (:inherit mindre-keyword))))
     '(elfeed-search-filter-face ((t (:inherit mindre-faded))))
@@ -983,6 +984,9 @@ Takes care of adding or removing hooks when the
 
     ;; ---- ibuffer --------------------------------------------------
     '(all-the-icons-ibuffer-mode-face ((t (:inherit mindre-faded))))
+
+    ;; ---- popper --------------------------------------------------
+    '(popper-echo-area ((t (:inherit mindre-keyword))))
 
     ;; --- Racket ----------------------------------------------------
     `(racket-keyword-argument-face ((t (:inherit mindre-keyword)))))))
