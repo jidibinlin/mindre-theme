@@ -388,7 +388,7 @@ Takes care of adding or removing hooks when the
     '(success ((t (:inherit mindre-keyword))))
     '(warning ((t (:inherit mindre-warning))))
     '(error ((t (:inherit mindre-critical))))
-    '(match ((t (:inherit ,mindre-bold))))
+    '(match ((t (:inherit (mindre-keyword mindre-bold)))))
     `(preview-face ((t (:inherit mindre-subtle))))
 
     ;; --- General ------------------------------------------------------
