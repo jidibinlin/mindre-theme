@@ -397,6 +397,14 @@ Takes care of adding or removing hooks when the
     '(variable-pitch-text ((t (:height 1.0 :inherit variable-pitch))))
 
     ;; --- General ------------------------------------------------------
+    `(fill-column-indicator ((t (:stipple nil :foreground ,gray
+                                          :inverse-video nil
+                                          :box nil
+                                          :strike-through nil
+                                          :overline nil
+                                          :underline nil
+                                          :slant normal
+                                          :weight normal))))
     '(buffer-menu-buffer ((t (:inherit mindre-strong))))
     '(minibuffer-prompt ((t (:inherit mindre-strong))))
     `(isearch ((t (:inherit (mindre-strong highlight)))))
