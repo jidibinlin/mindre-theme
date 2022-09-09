@@ -451,7 +451,8 @@ Takes care of adding or removing hooks when the
     '(erc-error-face ((t (:inherit mindre-critical-i))))
 
     ;; --- Dictionary ----------------------------------------------------
-    `(dictionary-word-definition-face ((t (:inherit (mindre-default fixed-pitch)))))
+    `(dictionary-word-definition-face
+      ((t (:inherit (mindre-default fixed-pitch)))))
     `(dictionary-reference-face ((t (:inherit (mindre-keyword fixed-pitch)))))
 
     ;; --- Windows divider ----------------------------------------------
@@ -462,7 +463,8 @@ Takes care of adding or removing hooks when the
 
     ;; --- Tab bar ------------------------------------------------------
     '(tab-bar ((t (:inherit mindre-bar))))
-    `(tab-bar-tab ((t (:inherit default :box (:line-width 1 :color ,gray-silver)))))
+    `(tab-bar-tab ((t (:inherit default
+                                :box (:line-width 1 :color ,gray-silver)))))
     '(tab-bar-tab-inactive ((t (:inherit mindre-faded))))
     '(tab-line ((t (:inherit default))))
 
@@ -605,7 +607,8 @@ Takes care of adding or removing hooks when the
     '(eglot-highlight-symbol-face ((t (:inherit underline))))
 
     ;; --- Eww ----------------------------------------------------
-    `(eww-form-submit ((t (:box (:style released-button) :background ,bg-inactive))))
+    `(eww-form-submit ((t (:box (:style released-button)
+                                :background ,bg-inactive))))
 
     ;; --- Keycast ------------------------------------------------------
     `(keycast-key ((t :inherit nil :bold t)))
@@ -668,7 +671,8 @@ Takes care of adding or removing hooks when the
 
     ;; --- Flyspell ----------------------------------------------------
     '(flyspell-duplicate ((t (:inherit mindre-warning))))
-    `(flyspell-incorrect ((t (:inherit mindre-strong :underline (:style wave :color ,red)))))
+    `(flyspell-incorrect ((t (:inherit mindre-strong
+                                       :underline (:style wave :color ,red)))))
 
     ;; --- Flymake ----------------------------------------------------
     `(flymake-error ((t (:underline (:style wave :color ,red)))))
@@ -713,13 +717,15 @@ Takes care of adding or removing hooks when the
     '(org-archived ((t (:inherit mindre-faded))))
     '(org-block ((t (:inherit (mindre-block)))))
     '(org-code ((t (:background "#e7e7e7"))))
-    '(org-block-begin-line ((t (:slant italic :background nil :foreground nil :inherit nil))))
+    '(org-block-begin-line ((t (:slant italic :background nil
+                                       :foreground nil :inherit nil))))
     '(org-block-end-line ((t (:background nil :foreground nil :inherit nil))))
     '(org-checkbox ((t (:inherit (mindre-default)))))
     '(org-checkbox-undone-test ((t (:inherit (mindre-default)))))
     '(org-checkbox-done-text ((t (:inherit (mindre-faded)))))
     '(org-checkbox-statistics-done ((t (:height 0.6 :inherit mindre-faded))))
-    '(org-checkbox-statistics-todo ((t (:height 0.6 :foreground "dim gray" :inherit mindre-default))))
+    '(org-checkbox-statistics-todo ((t (:height 0.6 :foreground "dim gray"
+                                                :inherit mindre-default))))
     '(org-ellipsis ((t (:height 0.7 :inherit mindre-faded))))
     '(org-clock-overlay ((t (:inherit mindre-faded))))
     '(org-column ((t (:inherit mindre-faded))))
@@ -738,11 +744,16 @@ Takes care of adding or removing hooks when the
     '(org-headline-todo ((t (:inherit mindre-default))))
     '(org-hide ((t (:inherit mindre-subtle-i))))
     '(org-indent ((t (:inherit mindre-subtle-i))))
-    `(org-latex-and-related ((t (:inherit (mindre-default) :background ,bg-main))))
-    `(org-level-1 ((t (:height 1.15 :family "bookerly" :inherit mindre-strong))))
-    `(org-level-2 ((t (:height 1.1  :family "bookerly" :inherit mindre-strong))))
-    `(org-level-3 ((t (:height 1.05  :family "bookerly" :inherit mindre-strong))))
-    `(org-level-4 ((t (:height 1.0  :family "bookerly" :inherit mindre-strong))))
+    `(org-latex-and-related ((t (:inherit (mindre-default)
+                                          :background ,bg-main))))
+    `(org-level-1 ((t (:height 1.15 :family "bookerly"
+                               :inherit mindre-strong))))
+    `(org-level-2 ((t (:height 1.1  :family "bookerly"
+                               :inherit mindre-strong))))
+    `(org-level-3 ((t (:height 1.05  :family "bookerly"
+                               :inherit mindre-strong))))
+    `(org-level-4 ((t (:height 1.0  :family "bookerly"
+                               :inherit mindre-strong))))
     `(org-level-5 ((t (:family "bookerly" :inherit mindre-strong))))
     `(org-level-6 ((t (:family "bookerly" :inherit mindre-strong))))
     `(org-level-7 ((t (:family "bookerly" :inherit mindre-strong))))
@@ -774,12 +785,6 @@ Takes care of adding or removing hooks when the
 
     ;; --- Org superstar ------------------------------------------------
     '(org-superstar-header-bullet ((t (:height 0.9))))
-
-    ;; --- Org modern ---------------------------------------------------
-    `(org-modern-date-active ((t (:inherit org-modern-done :background ,bg-inactive))))
-    `(org-modern-statistics ((t (:inherit org-modern-done :background ,bg-inactive))))
-    `(org-modern-priority ((t (:inherit org-modern-done :background ,bg-inactive))))
-    `(org-modern-label ((t (:box (:color ,bg-main :line-width (0 . -1))))))
 
     ;; --- Mu4e ---------------------------------------------------------
     '(mu4e-attach-number-face ((t (:inherit mindre-strong))))
@@ -857,8 +862,10 @@ Takes care of adding or removing hooks when the
     '(elfeed-search-filter-face ((t (:inherit mindre-faded))))
     '(elfeed-search-last-update-face ((t (:inherit mindre-keyword))))
     '(elfeed-search-title-face ((t (:inherit mindre-faded))))
-    `(elfeed-search-unread-count-face ((t (:inherit mindre-strong :foreground ,fg-main))))
-    `(elfeed-search-unread-title-face ((t (:inherit mindre-strong :foreground ,fg-main))))
+    `(elfeed-search-unread-count-face ((t (:inherit mindre-strong
+                                                    :foreground ,fg-main))))
+    `(elfeed-search-unread-title-face ((t (:inherit mindre-strong
+                                                    :foreground ,fg-main))))
 
     ;; --- Rainbow delimeters ------------------------------------------
     '(rainbow-delimiters-depth-1-face ((t (:foreground "#b9bbbc"))))
