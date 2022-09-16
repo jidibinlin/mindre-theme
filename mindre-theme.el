@@ -730,7 +730,7 @@ Takes care of adding or removing hooks when the
     '(org-clock-overlay ((t (:inherit mindre-faded))))
     '(org-column ((t (:inherit mindre-faded))))
     '(org-column-title ((t (:inherit mindre-faded))))
-    `(org-date ((t (:foreground ,yellow-dark))))
+    '(org-date ((t (:inherit mindre-faded))))
     '(org-date-selected ((t (:inherit mindre-faded))))
     '(org-default ((t (:inherit mindre-faded))))
     '(org-document-info ((t (:inherit mindre-faded))))
