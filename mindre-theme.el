@@ -209,12 +209,12 @@
                    'face 'org-logbook))))
 (add-hook 'org-mode-hook #'org-set-logbook-face)
 
-(font-lock-add-keywords 'org-mode
-                        '(("\\(\\[\\)[0-9]\\{1,2\\}\\/[0-9]\\{1,2\\}\\(\\]\\)"
-                           (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) ""))))
-                          ("\\(\\[\\)[0-9]\\{1,2\\}\\/[0-9]\\{1,2\\}\\(\\]\\)"
-                           (2 (prog1 () (compose-region (match-beginning 2) (match-end 2) "")))))
-                        'append)
+;; (font-lock-add-keywords 'org-mode
+;;                         '(("\\(\\[\\)[0-9]\\{1,2\\}\\/[0-9]\\{1,2\\}\\(\\]\\)"
+;;                            (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) ""))))
+;;                           ("\\(\\[\\)[0-9]\\{1,2\\}\\/[0-9]\\{1,2\\}\\(\\]\\)"
+;;                            (2 (prog1 () (compose-region (match-beginning 2) (match-end 2) "")))))
+;;                         'append)
 
 (font-lock-add-keywords 'org-mode
                         '(("^ *\\(- \\)\\["
@@ -226,12 +226,12 @@
                         '(("^ *\\([+]\\) "
                            (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) "►"))))))
 
-(font-lock-add-keywords 'org-mode
-                        '(("\\(\\[\\)[0-9]\\{1,3\\}%\\(\\]\\)"
-                           (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) ""))))
-                          ("\\(\\[\\)[0-9]\\{1,3\\}%\\(\\]\\)"
-                           (2 (prog1 () (compose-region (match-beginning 2) (match-end 2) "")))))
-                        'append)
+;; (font-lock-add-keywords 'org-mode
+;;                         '(("\\(\\[\\)[0-9]\\{1,3\\}%\\(\\]\\)"
+;;                            (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) ""))))
+;;                           ("\\(\\[\\)[0-9]\\{1,3\\}%\\(\\]\\)"
+;;                            (2 (prog1 () (compose-region (match-beginning 2) (match-end 2) "")))))
+;;                         'append)
 
 ;;; fix tag alignment in variable-pitch-mode
 ;;; from https://list.orgmode.org/87lfh745ch.fsf@localhost/T/
