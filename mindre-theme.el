@@ -49,7 +49,8 @@
   (defconst mindre-theme-colors-alist
     '(;; Basic
       (bg-main . "#F5F5F5")
-      (fg-main . "#2e3338")
+      ;; (fg-main . "#2e3338")
+      (fg-main . "#37474f")
       (bg-active . "#f2f3f5")
       (bg-inactive . "#ebeced")
       (black . "#000000")
