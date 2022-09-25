@@ -183,6 +183,11 @@
                            1 'org-checkbox-done-text prepend))
                         'append)
 
+(font-lock-add-keywords 'org-mode
+                        '(("\\\\.*?\\({.*?}\\)"
+                           1 'org-latex-and-related append))
+                        'append)
+
 (defface org-extend-done nil
   "Face for the text part of DONE state."
   :group nil)
