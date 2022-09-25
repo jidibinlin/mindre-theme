@@ -671,8 +671,7 @@ Takes care of adding or removing hooks when the
 
     ;; --- Flyspell ----------------------------------------------------
     '(flyspell-duplicate ((t (:inherit mindre-warning))))
-    `(flyspell-incorrect ((t (:inherit mindre-strong
-                                       :underline (:style wave :color ,red)))))
+    `(flyspell-incorrect ((t (:underline (:style wave :color ,red)))))
 
     ;; --- Flymake ----------------------------------------------------
     `(flymake-error ((t (:underline (:style wave :color ,red)))))
