@@ -271,7 +271,8 @@ Optional MODE specifies major mode used for display."
       (set-window-buffer nil (current-buffer))
       (car (window-text-pixel-size nil (line-beginning-position) (point))))))
 (font-lock-add-keywords 'org-mode '(yant/org-align-tags) t)
-
+;; (add-hook 'org-mode-hook (lambda () (font-lock-add-keywords 'org-mode '(yant/org-align-tags) t)) 100)
+(add-hook 'org-mode-hook (lambda () (add-to-list 'font-lock-extra-managed-props 'org-tag-aligned)))
 
 (defun mindre--font-lock-add-paren ()
   "Make Lisp parentheses faded."
@@ -772,7 +773,7 @@ Takes care of adding or removing hooks when the
     '(org-sexp-date ((t (:inherit mindre-faded))))
     '(org-special-keyword ((t (:inherit (mindre-faded fixed-pitch)))))
     '(org-table ((t (:inherit (mindre-default fixed-pitch)))))
-    '(org-tag ((t (:inherit mindre-strong))))
+    '(org-tag ((t (:inherit mindre-faded))))
     '(org-tag-group ((t (:inherit mindre-faded))))
     '(org-target ((t (:inherit mindre-faded))))
     '(org-time-grid ((t (:inherit mindre-faded))))
