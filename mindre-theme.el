@@ -389,6 +389,8 @@ Takes care of adding or removing hooks when the
     '(fringe ((t (:inherit mindre-faded))))
     '(hl-line ((t (:inherit mindre-subtle))))
     `(link ((t (:underline (:color ,gray-silver :style line :position 6)))))
+    '(underline ((t (:underline (:color foreground-color :style line
+                                        :position 10)))))
 
     ;; --- Semantic -----------------------------------------------------
     '(shadow ((t (:inherit mindre-faded))))
@@ -722,7 +724,8 @@ Takes care of adding or removing hooks when the
     '(org-logbook ((t (:inherit fixed-pitch))))
     '(org-archived ((t (:inherit mindre-faded))))
     '(org-block ((t (:inherit (mindre-block)))))
-    '(org-code ((t (:background "#e7e7e7"))))
+    '(org-code ((t (:extend nil :inherit (mindre-block)))))
+    ;; '(org-code ((t (:background "#e7e7e7"))))
     '(org-block-begin-line ((t (:slant italic :background nil
                                        :foreground nil :inherit nil))))
     '(org-block-end-line ((t (:background nil :foreground nil :inherit nil))))
