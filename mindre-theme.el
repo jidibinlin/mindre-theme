@@ -271,7 +271,7 @@ Optional MODE specifies major mode used for display."
       (setf (buffer-string) string))
     (when (fboundp mode)
       (funcall mode)
-      (font-lock-fontify-buffer))
+      (font-lock-ensure))
     (if (get-buffer-window (current-buffer))
 	    (car (window-text-pixel-size nil (line-beginning-position) (point)))
       (set-window-buffer nil (current-buffer))
@@ -376,8 +376,8 @@ Takes care of adding or removing hooks when the
     ;; --- Header & mode line -------------------------------------------
     `(mode-line ((t (:inherit mindre-bar))))
     `(mode-line-inactive ((t (:inherit mindre-bar-inactive))))
-    `(mode-line-buffer-id ((t (:weight regular :background nil))))
-    `(mode-line-emphasis ((t (:weight regular :background nil))))
+    `(mode-line-buffer-id ((t (:weight regular :background unspecified))))
+    `(mode-line-emphasis ((t (:weight regular :background unspecified))))
     `(header-line ((t (:inherit mindre-bar :box nil))))
 
     ;; --- Structural ---------------------------------------------------
@@ -390,7 +390,7 @@ Takes care of adding or removing hooks when the
     '(hl-line ((t (:inherit mindre-subtle))))
     `(link ((t (:underline (:color ,gray-silver :style line :position 6)))))
     '(underline ((t (:underline (:color foreground-color :style line
-                                        :position 10)))))
+                                        :position 11)))))
 
     ;; --- Semantic -----------------------------------------------------
     '(shadow ((t (:inherit mindre-faded))))
@@ -726,9 +726,9 @@ Takes care of adding or removing hooks when the
     '(org-block ((t (:inherit (mindre-block)))))
     '(org-code ((t (:extend nil :inherit (mindre-block)))))
     ;; '(org-code ((t (:background "#e7e7e7"))))
-    '(org-block-begin-line ((t (:slant italic :background nil
-                                       :foreground nil :inherit nil))))
-    '(org-block-end-line ((t (:background nil :foreground nil :inherit nil))))
+    '(org-block-begin-line ((t (:slant italic :background unspecified
+                                       :foreground unspecified :inherit nil))))
+    '(org-block-end-line ((t (:background unspecified :foreground unspecified :inherit nil))))
     '(org-checkbox ((t (:inherit (mindre-default)))))
     '(org-checkbox-undone-test ((t (:inherit (mindre-default)))))
     '(org-checkbox-done-text ((t (:inherit (mindre-faded)))))
