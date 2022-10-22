@@ -189,6 +189,11 @@
                            1 'org-latex-and-related append))
                         'append)
 
+(font-lock-add-keywords 'latex-mode
+                        '(("\\\\.*?\\({.*?}\\)"
+                           1 'org-latex-and-related append))
+                        'append)
+
 (defface org-extend-done nil
   "Face for the text part of DONE state."
   :group nil)
