@@ -735,7 +735,7 @@ Takes care of adding or removing hooks when the
     '(org-checkbox-statistics-done ((t (:height 0.6 :inherit mindre-faded))))
     '(org-checkbox-statistics-todo ((t (:height 0.6 :foreground "dim gray"
                                                 :inherit mindre-default))))
-    '(org-ellipsis ((t (:height 0.7 :inherit mindre-faded))))
+    '(org-ellipsis ((t (:height 0.5 :inherit mindre-faded))))
     '(org-clock-overlay ((t (:inherit mindre-faded))))
     '(org-column ((t (:inherit mindre-faded))))
     '(org-column-title ((t (:inherit mindre-faded))))
