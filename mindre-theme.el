@@ -402,7 +402,7 @@ Takes care of adding or removing hooks when the
 
     ;; --- General ------------------------------------------------------
     '(fixed-pitch ((t (:family "Cascadia Mono"))))
-    '(variable-pitch ((t (:height 1.0 :family "Bookerly"))))
+    '(variable-pitch ((t (:family "Amazon Ember"))))
     '(variable-pitch-text ((t (:height 1.0 :inherit variable-pitch))))
 
     ;; --- General ------------------------------------------------------
@@ -755,18 +755,14 @@ Takes care of adding or removing hooks when the
     '(org-indent ((t (:inherit mindre-subtle-i))))
     `(org-latex-and-related ((t (:inherit (mindre-default)
                                           :background ,bg-main))))
-    `(org-level-1 ((t (:height 1.15 :family "bookerly"
-                               :inherit mindre-strong))))
-    `(org-level-2 ((t (:height 1.1  :family "bookerly"
-                               :inherit mindre-strong))))
-    `(org-level-3 ((t (:height 1.05  :family "bookerly"
-                               :inherit mindre-strong))))
-    `(org-level-4 ((t (:height 1.0  :family "bookerly"
-                               :inherit mindre-strong))))
-    `(org-level-5 ((t (:family "bookerly" :inherit mindre-strong))))
-    `(org-level-6 ((t (:family "bookerly" :inherit mindre-strong))))
-    `(org-level-7 ((t (:family "bookerly" :inherit mindre-strong))))
-    `(org-level-8 ((t (:family "bookerly" :inherit mindre-strong))))
+    `(org-level-1 ((t (:height 1.15 :inherit (variable-pitch mindre-strong)))))
+    `(org-level-2 ((t (:height 1.1 :inherit (variable-pitch mindre-strong)))))
+    `(org-level-3 ((t (:height 1.05 :inherit (variable-pitch mindre-strong)))))
+    `(org-level-4 ((t (:height 1.0  :inherit (variable-pitch mindre-strong)))))
+    `(org-level-5 ((t (:inherit (variable-pitch mindre-strong)))))
+    `(org-level-6 ((t (:inherit (variable-pitch mindre-strong)))))
+    `(org-level-7 ((t (:inherit (variable-pitch mindre-strong)))))
+    `(org-level-8 ((t (:inherit (variable-pitch mindre-strong)))))
     `(org-link ((t (:inherit link))))
     '(org-list-dt ((t (:inherit mindre-keyword))))
     '(org-macro ((t (:inherit mindre-faded))))
