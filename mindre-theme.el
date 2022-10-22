@@ -560,7 +560,7 @@ Takes care of adding or removing hooks when the
     '(info-title-4 ((t (:inherit mindre-strong))))
 
     ;; --- Helpful ------------------------------------------------------
-    '(helpful-heading ((t (:inherit mindre-strong))))
+    '(helpful-heading ((t (:height 1.2 :inherit mindre-strong))))
 
     ;; --- EPA ----------------------------------------------------------
     '(epa-field-body ((t (:inherit mindre-default))))
