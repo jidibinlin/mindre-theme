@@ -418,7 +418,7 @@ Takes care of adding or removing hooks when the
     '(minibuffer-prompt ((t (:inherit mindre-strong))))
     `(isearch ((t (:inherit (mindre-strong highlight)))))
     '(isearch-fail ((t (:inherit mindre-faded))))
-    '(show-paren-match ((t (:weight bold :foreground "#AB47BC"))))
+    '(show-paren-match ((t (:foreground "#AB47BC"))))
     '(show-paren-mismatch ((t (:inherit mindre-critical))))
     '(lazy-highlight ((t (:inherit mindre-subtle))))
     '(trailing-whitespace ((t (:inherit mindre-subtle))))
