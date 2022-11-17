@@ -273,7 +273,7 @@
 Optional MODE specifies major mode used for display."
   (with-temp-buffer
     (with-silent-modifications
-      (setf (buffer-string) string))
+      (insert string))
     (when (fboundp mode)
       (funcall mode)
       (font-lock-ensure))
