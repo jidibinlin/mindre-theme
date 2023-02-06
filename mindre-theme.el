@@ -184,10 +184,10 @@
                            1 'org-checkbox-done-text prepend))
                         'append)
 
-(font-lock-add-keywords 'org-mode
-                        '(("\\\\.*?\\({.*?}\\)"
-                           1 'org-latex-and-related append))
-                        'append)
+;; (font-lock-add-keywords 'org-mode
+;;                         '(("\\\\.*?\\({.*?}\\)"
+;;                            1 'org-latex-and-related append))
+;;                         'append)
 
 (font-lock-add-keywords 'latex-mode
                         '(("\\\\.*?\\({.*?}\\)"
@@ -423,7 +423,7 @@ Takes care of adding or removing hooks when the
      '(minibuffer-prompt ((t (:inherit mindre-strong))))
      `(isearch ((t (:inherit (mindre-strong highlight)))))
      '(isearch-fail ((t (:inherit mindre-faded))))
-     '(show-paren-match ((t (:foreground "#AB47BC"))))
+     '(show-paren-match ((t (:foreground "#AB47BC" :weight bold))))
      '(show-paren-mismatch ((t (:inherit mindre-critical))))
      '(lazy-highlight ((t (:inherit mindre-subtle))))
      '(trailing-whitespace ((t (:inherit mindre-subtle))))
@@ -728,8 +728,8 @@ Takes care of adding or removing hooks when the
      '(org-extend-done ((t (:inherit mindre-faded))))
      '(org-logbook ((t (:inherit fixed-pitch))))
      '(org-archived ((t (:inherit mindre-faded))))
-     '(org-block ((t (:inherit (mindre-block)))))
-     '(org-code ((t (:extend nil :inherit (mindre-block)))))
+     '(org-block ((t (:inherit mindre-block))))
+     '(org-code ((t (:extend nil :inherit mindre-block))))
      ;; '(org-code ((t (:background "#e7e7e7"))))
      '(org-block-begin-line ((t (:slant italic :background unspecified
                                         :foreground unspecified :inherit nil))))
@@ -1012,6 +1012,10 @@ Takes care of adding or removing hooks when the
 
      ;; ---- popper --------------------------------------------------
      '(popper-echo-area ((t (:inherit mindre-keyword))))
+
+     '(magit-branch-current ((t :inherit mindre-keyword :weight bold)))
+
+     `(markmacro-mark-face ((t (:background "lightblue"))))
 
      ;; --- Racket ----------------------------------------------------
      `(racket-keyword-argument-face ((t (:inherit mindre-keyword)))))))
