@@ -394,7 +394,7 @@ Takes care of adding or removing hooks when the
      '(region ((t (:inherit highlight))))
      '(fringe ((t (:inherit mindre-faded))))
      '(hl-line ((t (:inherit mindre-subtle))))
-     `(link ((t (:underline (:color ,gray-silver :style line :position 6)))))
+     `(link ((t (:underline (:color ,gray-silver :style line :position 9)))))
      '(underline ((t (:underline (:color foreground-color :style line
                                          :position 11)))))
 
