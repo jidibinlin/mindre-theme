@@ -51,10 +51,10 @@
       (bg-main . "#F5F5F5")
       ;; (fg-main . "#2e3338")
       (fg-main . "#37474f")
-      (bg-active . "#f2f3f5")
+      ;; (bg-active . "#f2f3f5")
       (bg-inactive . "#ebeced")
-      (black . "#000000")
-      (black-alt . "#171A1C")
+      ;; (black . "#000000")
+      ;; (black-alt . "#171A1C")
       (gray . "#CFD8DC")
       (gray-light . "#ECEFF1")
       (gray-silver . "#B0BEC5")
@@ -246,6 +246,7 @@
 
 ;;; fix tag alignment in variable-pitch-mode
 ;;; from https://list.orgmode.org/87lfh745ch.fsf@localhost/T/
+(defvar org-ellipsis)
 (defun yant/org-align-tags (limit &optional force)
   "Align all the tags in org buffer."
   (save-match-data
@@ -304,7 +305,7 @@ Optional MODE specifies major mode used for display."
   "List of modes for which faded parentheses should be enabled."
   :type '(symbol) :group 'mindre)
 
-(defun mindre--set-faded-lisp-parens (symbol value)
+(defun mindre--set-faded-lisp-parens (_symbol value)
   "Mindre :set function for `mindre-use-faded-lisp-parens'.
 Takes care of adding or removing hooks when the
 `mindre-use-faded-lisp-parens' variable is customized."
