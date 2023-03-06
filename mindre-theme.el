@@ -477,10 +477,15 @@ Takes care of adding or removing hooks when the
      `(vertical-border ((t (:foreground ,gray-silver))))
 
      ;; --- Tab bar ------------------------------------------------------
-     '(tab-bar ((t (:inherit mindre-bar))))
-     `(tab-bar-tab ((t (:inherit default
-                                 :box (:line-width 1 :color ,gray-silver)))))
-     '(tab-bar-tab-inactive ((t (:inherit mindre-faded))))
+	 `(tab-bar ((t (:family "Cascadia Mono" :height 1.1 :inherit default))))
+     `(tab-bar-tab ((t (:family "Cascadia Mono" :background "#dde4e6"
+								:box (:line-width (8 . 5)
+												  :color "#dde4e6"
+												  :style flat-button)))))
+     `(tab-bar-tab-inactive ((t (:family "Cascadia Mono" :foreground ,gray-silver :background ,bg-inactive
+										 :box (:line-width (8 . 5)
+														   :color ,bg-inactive
+														   :style flat-button)))))
      '(tab-line ((t (:inherit default))))
 
      ;; --- Line numbers -------------------------------------------------
