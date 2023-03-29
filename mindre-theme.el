@@ -394,9 +394,9 @@ Takes care of adding or removing hooks when the
      '(region ((t (:inherit highlight))))
      '(fringe ((t (:inherit mindre-faded))))
      '(hl-line ((t (:inherit mindre-subtle))))
-     `(link ((t (:underline (:color ,gray-silver :style line :position 9)))))
+     `(link ((t (:underline (:color ,gray-silver :style line :position 8)))))
      '(underline ((t (:underline (:color foreground-color :style line
-                                         :position 11)))))
+                                         :position 8)))))
 
      ;; --- Semantic -----------------------------------------------------
      '(shadow ((t (:inherit mindre-faded))))
@@ -477,7 +477,7 @@ Takes care of adding or removing hooks when the
      `(vertical-border ((t (:foreground ,gray-silver))))
 
      ;; --- Tab bar ------------------------------------------------------
-	 `(tab-bar ((t (:family "Cascadia Mono" :height 1.1 :inherit default))))
+	 `(tab-bar ((t (:family "Cascadia Mono" :height 0.9 :inherit default))))
      `(tab-bar-tab ((t (:family "Cascadia Mono" :background "#dde4e6"
 								:box (:line-width (8 . 5)
 												  :color "#dde4e6"
