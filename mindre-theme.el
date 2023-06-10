@@ -820,6 +820,7 @@ Takes care of adding or removing hooks when the
      '(mu4e-footer-face ((t (:inherit mindre-faded))))
      '(mu4e-forwarded-face ((t (:inherit mindre-default))))
      '(mu4e-header-face ((t (:inherit mindre-faded))))
+	 '(mu4e-related-face ((t (:strike-through t :inherit mindre-faded))))
      '(mu4e-header-highlight-face ((t (:inherit highlight))))
      '(mu4e-header-key-face ((t (:inherit mindre-strong))))
      '(mu4e-header-marks-face ((t (:inherit mindre-faded))))
@@ -831,7 +832,7 @@ Takes care of adding or removing hooks when the
      '(mu4e-moved-face ((t (:inherit mindre-faded))))
      '(mu4e-ok-face ((t (:inherit mindre-faded))))
      '(mu4e-region-code ((t (:inherit mindre-faded))))
-     '(mu4e-replied-face ((t (:inherit mindre-default))))
+     '(mu4e-replied-face ((t (:inherit mindre-note))))
      '(mu4e-special-header-value-face ((t (:inherit mindre-default))))
      '(mu4e-system-face ((t (:inherit mindre-faded))))
      '(mu4e-title-face ((t (:inherit mindre-strong))))
@@ -1022,6 +1023,11 @@ Takes care of adding or removing hooks when the
      '(magit-branch-current ((t :inherit mindre-keyword :weight bold)))
 
      `(markmacro-mark-face ((t (:background "lightblue"))))
+
+	 '(embark-selected ((t (:background "lightblue"))))
+	 '(marginalia-off ((t (:inherit mindre-faded))))
+	 '(marginalia-type ((t (:inherit mindre-faded))))
+	 '(marginalia-value ((t (:inherit mindre-faded))))
 
      ;; --- Racket ----------------------------------------------------
      `(racket-keyword-argument-face ((t (:inherit mindre-keyword)))))))
