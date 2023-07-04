@@ -231,6 +231,9 @@
                         '(("^ *\\(- \\)\\[\\( \\|X\\|-\\)\\]"
                            (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) ""))))))
 (font-lock-add-keywords 'org-mode
+                        '(("^\\(\\*+\\)\\*"
+                           (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) ""))))))
+(font-lock-add-keywords 'org-mode
                         '(("^ *\\([-]\\) "
                            (1 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 (font-lock-add-keywords 'org-mode
