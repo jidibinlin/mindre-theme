@@ -1030,7 +1030,10 @@ Takes care of adding or removing hooks when the
 	 '(marginalia-value ((t (:inherit mindre-faded))))
 
      ;; --- Racket ----------------------------------------------------
-     `(racket-keyword-argument-face ((t (:inherit mindre-keyword)))))))
+     `(racket-keyword-argument-face ((t (:inherit mindre-keyword))))
+
+	 '(pdf-view-pagemark-color ((t (:background "#ffffaa"))))
+	 )))
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
