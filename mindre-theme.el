@@ -68,8 +68,8 @@
 (defmacro mindre-with-color-variables (&rest body)
   (declare (indent 0))
   `(let (,@(mapcar (lambda (cons)
-		             (list (car cons) (cdr cons)))
-		           mindre-theme-colors-alist))
+                     (list (car cons) (cdr cons)))
+                   mindre-theme-colors-alist))
      ,@body))
 
 (defface mindre-critical nil
@@ -254,23 +254,23 @@
   "Align all the tags in org buffer."
   (save-match-data
     (when (eq major-mode 'org-mode)
-	  (while (re-search-forward "^\\*+ \\(.+?\\)\\([ \t]+\\)\\(:\\(?:[^ \n]+:\\)+\\)$" limit t)
-	    (when (and (match-string 2)
-		           (or force
-			           (not (get-text-property (match-beginning 2) 'org-tag-aligned))))
-	      (with-silent-modifications
+      (while (re-search-forward "^\\*+ \\(.+?\\)\\([ \t]+\\)\\(:\\(?:[^ \n]+:\\)+\\)$" limit t)
+        (when (and (match-string 2)
+                   (or force
+                       (not (get-text-property (match-beginning 2) 'org-tag-aligned))))
+          (with-silent-modifications
             (put-text-property (match-beginning 2) (match-end 2) 'org-tag-aligned t)
-	        (put-text-property (if (>= 2 (- (match-end 2) (match-beginning 2)))
-				                   (match-beginning 2)
-				                 ;; multiple whitespaces may mean that we are in process of typing
-				                 (1+ (match-beginning 2)))
-				               (match-end 2)
-				               'display
-				               `(space . (:align-to (- right
-							                           (,(+ 3 ;; no idea, but otherwise it is sometimes not enough
-							                                (string-display-pixel-width org-ellipsis)
-							                                (string-display-pixel-width (or (match-string 3)
-											                                                ""))))))))))))))
+            (put-text-property (if (>= 2 (- (match-end 2) (match-beginning 2)))
+                                   (match-beginning 2)
+                                 ;; multiple whitespaces may mean that we are in process of typing
+                                 (1+ (match-beginning 2)))
+                               (match-end 2)
+                               'display
+                               `(space . (:align-to (- right
+                                                       (,(+ 3 ;; no idea, but otherwise it is sometimes not enough
+                                                            (string-display-pixel-width org-ellipsis)
+                                                            (string-display-pixel-width (or (match-string 3)
+                                                                                            ""))))))))))))))
 
 (defun string-display-pixel-width (string &optional mode)
   "Calculate pixel width of STRING.
@@ -282,7 +282,7 @@ Optional MODE specifies major mode used for display."
       (funcall mode)
       (font-lock-ensure))
     (if (get-buffer-window (current-buffer))
-	    (car (window-text-pixel-size nil (line-beginning-position) (point)))
+        (car (window-text-pixel-size nil (line-beginning-position) (point)))
       (set-window-buffer nil (current-buffer))
       (car (window-text-pixel-size nil (line-beginning-position) (point))))))
 (font-lock-add-keywords 'org-mode '(yant/org-align-tags) t)
@@ -313,13 +313,13 @@ Optional MODE specifies major mode used for display."
 Takes care of adding or removing hooks when the
 `mindre-use-faded-lisp-parens' variable is customized."
   (let ((hooks (mapcar (lambda (mode) (intern (format "%s-hook" mode)))
-		               mindre-faded-lisp-parens-modes)))
+                       mindre-faded-lisp-parens-modes)))
     (if value
-	    (progn
-	      (dolist (hook hooks)
-	        (add-hook hook #'mindre--font-lock-add-paren)))
+        (progn
+          (dolist (hook hooks)
+            (add-hook hook #'mindre--font-lock-add-paren)))
       (dolist (hook hooks)
-	    (remove-hook hook #'mindre--font-lock-add-paren))))
+        (remove-hook hook #'mindre--font-lock-add-paren))))
   (setq mindre-use-faded-lisp-parens value))
 
 (defcustom mindre-use-faded-lisp-parens t
@@ -411,7 +411,7 @@ Takes care of adding or removing hooks when the
 
      ;; --- General ------------------------------------------------------
      '(fixed-pitch ((t (:family "Cascadia Mono"))))
-     '(variable-pitch ((t (:family "Amazon Ember"))))
+     '(variable-pitch ((t (:family "Bookerly"))))
      '(variable-pitch-text ((t (:height 1.0 :inherit variable-pitch))))
 
      ;; --- General ------------------------------------------------------
@@ -454,7 +454,7 @@ Takes care of adding or removing hooks when the
      '(tty-menu-selected-face ((t (:inherit mindre-keyword-i))))
 
      ;; --- whitespace-mode ----------------------------------------------------
-     `(whitespace-space ((t (:inherit mindre-default))))
+     `(whitespace-space ((t (:inherit mindre-faded))))
      `(whitespace-empty ((t (:inherit mindre-default :foreground ,orange))))
      `(whitespace-newline ((t (:inherit mindre-faded))))
 
@@ -480,15 +480,15 @@ Takes care of adding or removing hooks when the
      `(vertical-border ((t (:foreground ,gray-silver))))
 
      ;; --- Tab bar ------------------------------------------------------
-	 `(tab-bar ((t (:family "Cascadia Mono" :height 0.9 :inherit default))))
+     `(tab-bar ((t (:family "Cascadia Mono" :height 0.9 :inherit default))))
      `(tab-bar-tab ((t (:family "Cascadia Mono" :background "#dde4e6"
-								:box (:line-width (8 . 5)
-												  :color "#dde4e6"
-												  :style flat-button)))))
+                                :box (:line-width (8 . 5)
+                                                  :color "#dde4e6"
+                                                  :style flat-button)))))
      `(tab-bar-tab-inactive ((t (:family "Cascadia Mono" :foreground ,gray-silver :background ,bg-inactive
-										 :box (:line-width (8 . 5)
-														   :color ,bg-inactive
-														   :style flat-button)))))
+                                         :box (:line-width (8 . 5)
+                                                           :color ,bg-inactive
+                                                           :style flat-button)))))
      '(tab-line ((t (:inherit default))))
 
      ;; --- Line numbers -------------------------------------------------
@@ -572,6 +572,10 @@ Takes care of adding or removing hooks when the
      '(info-title-2 ((t (:height 1.3 :inherit mindre-strong))))
      '(info-title-3 ((t (:height 1.2 :inherit mindre-strong))))
      '(info-title-4 ((t (:inherit mindre-strong))))
+
+     ;; --- Info-colors --------------------------------------------------
+     '(info-colors-ref-item-variable ((t (:inherit mindre-verbatim))))
+     '(info-colors-ref-item-user-option ((t (:inherit mindre-verbatim))))
 
      ;; --- Helpful ------------------------------------------------------
      '(helpful-heading ((t (:height 1.2 :inherit mindre-strong))))
@@ -823,7 +827,7 @@ Takes care of adding or removing hooks when the
      '(mu4e-footer-face ((t (:inherit mindre-faded))))
      '(mu4e-forwarded-face ((t (:inherit mindre-default))))
      '(mu4e-header-face ((t (:inherit mindre-faded))))
-	 '(mu4e-related-face ((t (:strike-through t :inherit mindre-faded))))
+     '(mu4e-related-face ((t (:strike-through t :inherit mindre-faded))))
      '(mu4e-header-highlight-face ((t (:inherit highlight))))
      '(mu4e-header-key-face ((t (:inherit mindre-strong))))
      '(mu4e-header-marks-face ((t (:inherit mindre-faded))))
@@ -1027,21 +1031,21 @@ Takes care of adding or removing hooks when the
 
      `(markmacro-mark-face ((t (:background "lightblue"))))
 
-	 '(embark-selected ((t (:background "lightblue"))))
-	 '(marginalia-off ((t (:inherit mindre-faded))))
-	 '(marginalia-type ((t (:inherit mindre-faded))))
-	 '(marginalia-value ((t (:inherit mindre-faded))))
+     '(embark-selected ((t (:background "lightblue"))))
+     '(marginalia-off ((t (:inherit mindre-faded))))
+     '(marginalia-type ((t (:inherit mindre-faded))))
+     '(marginalia-value ((t (:inherit mindre-faded))))
 
      ;; --- Racket ----------------------------------------------------
      `(racket-keyword-argument-face ((t (:inherit mindre-keyword))))
 
-	 '(pdf-view-pagemark-color ((t (:background "#ffffaa"))))
-	 )))
+     '(pdf-view-pagemark-color ((t (:background "#ffffaa"))))
+     )))
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
   (add-to-list 'custom-theme-load-path
-	           (file-name-as-directory (file-name-directory load-file-name))))
+               (file-name-as-directory (file-name-directory load-file-name))))
 
 ;;;###autoload
 (run-hooks 'mindre-after-load-hook)
