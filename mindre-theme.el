@@ -383,8 +383,8 @@ Takes care of adding or removing hooks when the
      `(mindre-button-hover ((t (:inherit mindre-button :background ,bg-inactive))))
 
      ;; --- Header & mode line -------------------------------------------
-     `(mode-line ((t (:inherit mindre-bar))))
-     `(mode-line-inactive ((t (:inherit mindre-bar-inactive))))
+     `(mode-line ((t (:foreground ,gray-light))))
+     `(mode-line-inactive ((t (:foreground "#535c65" :background ,bg-inactive))))
      `(mode-line-buffer-id ((t (:weight regular :background unspecified))))
      `(mode-line-emphasis ((t (:weight regular :background unspecified))))
      `(header-line ((t (:inherit mindre-bar :box nil))))
